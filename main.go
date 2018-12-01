@@ -31,7 +31,15 @@ func main() {
 	// this uses the word size of the machine
 	// compiling the code. Does cgo allow us to
 	// specify integers as unsigned/16bit/32bit?
-	year := C.int(2018)
+	year := C.int(2020)
+
+	// We can access any C struct by using the
+	// C.struct_ syntax then we can initialize the
+	// struct just as we would with any Go struct
+	g := C.struct_Greetee{
+		name: name,
+		year: year,
+	}
 
 	// Here we allocate the buffer that will
 	// store the greeting. We're not checking for
@@ -48,7 +56,7 @@ func main() {
 	// In order to call the greeting function in
 	// our C program, we must cast our unsafe.Pointer
 	// to a *C.char.
-	size := C.greet(name, year, (*C.char)(ptr))
+	size := C.greet(&g, (*C.char)(ptr))
 
 	// C.GoBytes takes in a C buffer and the size
 	// of the data in the buffer and returns a []byte.
