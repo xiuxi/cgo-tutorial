@@ -1,0 +1,6 @@
+go help
+go clean
+go run main.go
+go build main.go
+https://riptutorial.com/go/example/21315/cgo--first-steps-tutorial
+
