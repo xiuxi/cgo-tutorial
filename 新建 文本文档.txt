@@ -1,0 +1,5 @@
+https://sodocumentation.net/go/topic/6455/cgo
+https://pkg.go.dev/cmd/cgo
+https://karthikkaranth.me/blog/calling-c-code-from-go/
+https://riptutorial.com/go/example/21315/cgo--first-steps-tutorial
+
